@@ -12,7 +12,7 @@ defmodule DeployNanny.CLI do
                                      aliases:  [ h:    :help    ])
 
     case parse do
-      { [ help: true ] }
+      { [ help: true ], _, _ }
         -> :help
       _ -> :coming_soon
     end
