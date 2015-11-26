@@ -1,0 +1,6 @@
+%{"certifi": {:hex, :certifi, "0.3.0"},
+  "hackney": {:hex, :hackney, "1.4.6"},
+  "httpoison": {:git, "https://github.com/edgurgel/httpoison.git", "87aabe18be27bf25af2a4182b4754cd0a35aa1dd", []},
+  "idna": {:hex, :idna, "1.0.2"},
+  "mimerl": {:hex, :mimerl, "1.0.0"},
+  "ssl_verify_hostname": {:hex, :ssl_verify_hostname, "1.0.5"}}

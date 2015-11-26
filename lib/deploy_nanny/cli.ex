@@ -7,6 +7,7 @@ defmodule DeployNanny.CLI do
     end
   end
 
+  # TODO: add --no-deploy and --sleep
   def parse_args(argv) do
     parse = OptionParser.parse(argv, switches: [ help: :boolean ],
                                      aliases:  [ h:    :help    ])
