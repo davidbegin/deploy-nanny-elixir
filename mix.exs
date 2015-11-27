@@ -28,7 +28,8 @@ defmodule DeployNanny.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:httpoison, github: "edgurgel/httpoison"}
+      {:httpoison, github: "edgurgel/httpoison", override: true},
+      {:tentacat, github: "edgurgel/tentacat"}
     ]
   end
 end
