@@ -3,7 +3,7 @@ defmodule DeployNanny.CLI do
   def run(argv) do
     case parse_args(argv) do
       :help        -> IO.puts "HELP!"
-      :coming_soon -> IO.puts "DEPLOY NANNY ELIXIR COMING SOON"
+      :deploy      -> DeployNanny.GithubClient.connect
     end
   end
 
@@ -15,7 +15,7 @@ defmodule DeployNanny.CLI do
     case parse do
       { [ help: true ], _, _ }
         -> :help
-      _ -> :coming_soon
+      _ -> :deploy
     end
   end
 
