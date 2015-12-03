@@ -1,5 +1,5 @@
 defmodule DeployNanny.GithubClient do
-  def connect do
+  def connect({user, repo, ref}) do
     # should I start this somewhere else, and ensure its only started once?
     Tentacat.start
 
@@ -8,10 +8,10 @@ defmodule DeployNanny.GithubClient do
     result   = Tentacat.References.find user, repo, ref, client
     object   = result["object"]
     sha      = object["sha"]
-    display_sha(sha)
+    display_sha(sha, user, repo, ref)
   end
 
-  def display_sha(sha) do
+  def display_sha(sha, user, repo, ref) do
     IO.puts "\n"
     IO.puts "\e[34mUser:\e[0m #{user}"
     IO.puts "\e[35mRepo:\e[0m #{repo}"
@@ -19,9 +19,4 @@ defmodule DeployNanny.GithubClient do
     IO.puts "\e[37mSha:\e[0m #{sha}"
   end
 
-  # TODO: make this configurable,
-  # have them passed in as variables to connect.
-  def user, do: "davidbegin"
-  def repo, do: "deploy-nanny-elixir"
-  def ref,  do: "heads/master"
 end

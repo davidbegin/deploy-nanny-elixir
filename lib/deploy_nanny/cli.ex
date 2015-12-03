@@ -3,7 +3,13 @@ defmodule DeployNanny.CLI do
   def run(argv) do
     case parse_args(argv) do
       :help        -> IO.puts "HELP!"
-      :deploy      -> DeployNanny.GithubClient.connect
+      :deploy      -> DeployNanny.GithubClient.connect(
+        {
+          "davidbegin",
+          "deploy-nanny-elixir",
+          "heads/master",
+        }
+      )
     end
   end
 
@@ -20,3 +26,4 @@ defmodule DeployNanny.CLI do
   end
 
 end
+
